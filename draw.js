@@ -1,4 +1,4 @@
-const canvas = document.querySelector('canvas');
+const canvas = document.querySelector('.canvas');
 const ctx = canvas.getContext('2d');
 const scale = 10;
 const rows = canvas.height / scale;
@@ -24,6 +24,9 @@ var fruit;
         if (snake.eat(fruit)) {
             fruit.pickLocation();
         }
+
+        snake.checkCollision();
+        document.querySelector('.score').innerHTML = snake.total;
 
     }, 250);
 }());
